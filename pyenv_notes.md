@@ -46,19 +46,54 @@ pyenv install 3.10.1
 
 - If installation fails due to `BUILD FAILED (OS X 11.5.2 using python-build 20180424)`, first install the `Xcode Command Line Tools` beta version (https://emilwypych.com/2020/11/23/pyenv-problem-macosx_deployment_target11-0/?cn-reloaded=1)
 ```
+clang --version
 xcode-select --install
-softwareupdate --list
 
-xcode-select --switch /Applications/Xcode-beta.app
-
+# Remove xcode to update version
+sudo rm -rf /Library/Developer/CommandLineTools
+xcode-select --install
+# softwareupdate --list
+# xcode-select --switch /Applications/Xcode-beta.app
+```
+-> Output of `clang --version`
+```
+Apple clang version 13.0.0 (clang-1300.0.27.3)
+Target: x86_64-apple-darwin21.2.0
+Thread model: posix
 ```
 
-
-- View `pyevn` versions
+- If `pyenv install xxx` does not work here for MacOS, perform these steps
 ```
+brew install openssl
+brew reinstall pyenv
+pyenv init  # initialise inside your project directory
+pyenv install xxx
+pyenv local xxx  # activate python version inside your project directory
+```
+
+- If needed, modify `.zshrc` file so that `.pyenv shims` is at the start of the `$PATH`
+`PATH=/Users/joe/.pyenv/shims:${PATH}`
+`source .zshrc`
+
+
+#### View `pyevn` versions
+```
+pyenv versions
+pyenv global 3.10.1
 pyenv versions
 ```
 
+- Activate different versions of Python using the `pyenv shell [version]`; e.g.
+```
+which python  # /Users/joe/.pyenv/shims/python
+python
+pyenv shell 3.10.1
+python
+```
+-> `.pyenv/shims` takes care of everything
+
+
+## pyenv-virtualenvwrapper
 
 
 
