@@ -95,7 +95,9 @@ python
 
 ## pyenv-virtualenvwrapper
 
-
+```
+brew install pyenv-virtualenvwrapper
+```
 
 
 https://github.com/pyenv/pyenv#installation
