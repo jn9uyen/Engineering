@@ -76,7 +76,22 @@ docker build -t test:pandas .
  ```
  - `2022-02-12`: argument for python script (`sys.argv[1]`)
  - `2022-02-12 123 sdf`: can specify multiple arguments
- 
+
+
+## View docker processes' status (ps)
+```
+docker ps
+```
+
+Get container ids:
+```
+docker ps -q
+```
+
+Kill all containers
+```
+docker kill $(docker ps -q)
+```
  
  
 
