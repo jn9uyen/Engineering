@@ -99,6 +99,32 @@ python
 brew install pyenv-virtualenvwrapper
 ```
 
+### Append to `.zshrc`
+```
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+export WORKON_HOME=$HOME/.virtualenvs
+pyenv virtualenvwrapper_lazy
+```
 
-https://github.com/pyenv/pyenv#installation
-https://github.com/pyenv/pyenv#basic-github-checkout
+### List all virtualenvs (from [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/))
+```
+ls $WORKON_HOME
+```
+
+### Switch between envs
+
+- Use `workon`
+- Check current `env`:
+```
+echo $VIRTUAL_ENV
+```
+
+## Difference between all of these tools (e.g. `pyenv`, `virtualenv`)
+
+Answer from [stack overflow](https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe)
+
+- `virtualenv` is a very popular tool that creates isolated Python environments for Python libraries. It works by installing a bunch of files in a directory (eg: `env/`), and then modifying the `PATH` environment variable to prefix it with a custom bin directory (eg: `env/bin/`). An exact copy of the python or python3 binary is placed in this directory, but Python is programmed to look for libraries relative to its path first, in the environment directory.
+- `pyenv` is used to isolate Python versions, e.g. `2.7`, `3.8`, `3.10`. Once activated, it prefixes the `PATH` environment variable with `~/.pyenv/shims`, where there are special files matching the Python commands (`python`, `pip`). These are not copies of the Python-shipped commands; they are special scripts that decide on the fly which version of Python to run based on the `PYENV_VERSION` environment variable, or the `.python-version` file, or the `~/.pyenv/version` file
+- `pyenv-virtualenv` is a plugin for `pyenv` by the same author as `pyenv`, to allow you to use `pyenv` and `virtualenv` at the same time conveniently. However, if you're using Python 3.3 or later, `pyenv-virtualenv` will try to run `python -m venv` if it is available, instead of `virtualenv`. You can use `virtualenv` and `pyenv` together without `pyenv-virtualenv`, if you don't want the convenience features.
+- `virtualenvwrapper` is a set of extensions to `virtualenv` (see docs). It gives you commands like `mkvirtualenv`, `lssitepackages`, and especially `workon` for switching between different virtualenv directories. This tool is especially useful if you want multiple virtualenv directories.
+- `pyenv-virtualenvwrapper` is a plugin for `pyenv` by the same author as `pyenv`, to conveniently integrate `virtualenvwrapper` into `pyenv`
