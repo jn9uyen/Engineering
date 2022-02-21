@@ -27,6 +27,12 @@ echo $PATH
 `/Users/joe/google-cloud-sdk/bin:/Users/joe/miniconda3/bin:/Users/joe/miniconda3/condabin:/Users/joe/.pyenv/shims:/usr/local/bin:/usr/local/sbin:/Users/joe/Documents/c01_wxds:/usr/bin:/bin:/usr/sbin:/sbin:~/.local/bin:/Users/joe/Documents/c01_wxds`
 -> Note that `/Users/joe/.pyenv/shims` has been added (3rd element in `$PATH`)
 
+**NOTE**: We need `~/.pyenv/shims` to precede `miniconda3` for `which python` to read from `pyenv` instead of `miniconda3`. So, we need to add:
+```
+PATH=/Users/joe/.pyenv/shims:${PATH}
+```
+after the conda initialisation in `~/.zshrc`.
+
 
 ### Commands
 
