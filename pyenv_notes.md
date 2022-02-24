@@ -1,4 +1,4 @@
-# "Pyenv Virtualenv Virtualenvwrapper" Notes
+# `Pyenv Virtualenv Virtualenvwrapper` Notes
 
 Instructions from [Svi Scripts](https://alysivji.github.io/setting-up-pyenv-virtualenvwrapper.html):
 
