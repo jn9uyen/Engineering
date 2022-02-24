@@ -112,6 +112,11 @@ export WORKON_HOME=$HOME/.virtualenvs
 pyenv virtualenvwrapper_lazy
 ```
 
+### Create virtual env
+```
+mkvirtualenv <evn_name>
+```
+
 ### List all virtualenvs (from [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/))
 ```
 ls $WORKON_HOME
