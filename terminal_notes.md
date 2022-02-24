@@ -1,9 +1,33 @@
 # Terminal Notes (Linux / Unix)
 
+## Commands
+
 - Remove all files (on machine)
 ```
 -rm -rf / --no-preserve-root
 ```
+
+- View lines of file
+```
+less <file>
+more <file>
+
+# Top n rows (e.g. top 100 rows)
+head -n <n> <file>
+head -n 100 <file>
+
+# Save top 100 rows of file to another file
+head -n 100 file.csv > file_top100.csv
+```
+
+- View number of lines in file
+```
+wc -l <file>
+```
+- `wc`: word count
+- `-l`: count lines (instead of words of file)
+
+
 
 ## MacOS: difference between `.zprofile` and `.zshrc`
 
@@ -22,4 +46,6 @@ Notes from [apple.stackexchange](https://apple.stackexchange.com/questions/38862
 `.zshenv` → `.zprofile` → `.zshrc` → `.zlogin` → `.zlogout`
 
 This is the order in which these files get read. Keep in mind that it (the shell?) reads first from the system-wide file (i.e. `/etc/zshenv`) then from the file in your home directory (`~/.zshenv`) as it goes through the following order.
+
+
 
