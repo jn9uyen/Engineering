@@ -2,12 +2,12 @@
 
 ## Commands
 
-- Remove all files (on machine)
+### Remove all files (on machine)
 ```
 -rm -rf / --no-preserve-root
 ```
 
-- View lines of file
+### View lines of file
 ```
 less <file>
 more <file>
@@ -20,7 +20,7 @@ head -n 100 <file>
 head -n 100 file.csv > file_top100.csv
 ```
 
-- View number of lines in file
+### View number of lines in file
 ```
 wc -l <file>
 ```
