@@ -12,8 +12,10 @@ InteractiveShell.ast_node_interactivity = "all"
 ```
 
 ### Show all rows / columns
-`pd.set_option('display.max_rows', None)`
-`pd.set_option('display.max_columns', None)`
+```
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+```
 
 ### Reload local package
 ```
