@@ -95,3 +95,35 @@ sns.set_context('notebook', font_scale=1.2, rc={
 sns.set_style('darkgrid', rc={'legend.frameon': True})
 plt.rcParams['figure.figsize'] = (9, 5)
 ```
+
+## Conda
+
+### List conda envs
+```
+conda env list
+```
+
+### Create env cloning another `env`
+```
+conda create --name <env_name> --clone <clone_env_name>
+# e.g.
+conda create --name <env_name> --clone base
+```
+
+### Create env and ensure it's available in Jupyter notebook as a kernel
+
+In terminal:
+```
+conda create -n <env_name> ipykernel
+python -m ipykernel install --user --name <env_name>
+
+e.g.
+conda create -n test_env --clone base
+conda install -n test_env ipykernel
+python -m ipykernel install --user --name test_env
+```
+
+### Delete env
+```
+conda env remove -n <env_name>
+```
