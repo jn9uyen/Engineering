@@ -28,6 +28,15 @@ wc -l <file>
 - `-l`: count lines (instead of words of file)
 
 
+### [Get public and local IP addresses (Mac)](https://constellix.com/news/what-is-my-ip-address)
+
+- `ipconfig getifaddr en1`: system will return the IP address for a wired Ethernet connection
+- `ipconfig getifaddr en0`: return the IP address of your wireless connection
+- `curl ifconfig.me`: returns the public IP address of the Mac Terminal
+
+- local IP address is from "wireless connection" when connected on wifi
+
+
 
 ## MacOS: difference between `.zprofile` and `.zshrc`
 
