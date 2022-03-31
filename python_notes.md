@@ -118,6 +118,25 @@ sns.set_style('darkgrid', rc={'legend.frameon': True})
 plt.rcParams['figure.figsize'] = (9, 5)
 ```
 
+### Run `http.server` function (from cmd line)
+```
+python -m http.server
+```
+- `-m`: module
+- this command creates a web connection to the (local) current directory, on port `8000`
+- in a browser, connect via `localhost:8000`; OR
+
+On Mac, use these commands to get [IP address](https://constellix.com/news/what-is-my-ip-address)
+-> local IP address is from "wireless connection" when connected on wifi
+- `ipconfig getifaddr en1`: system will return the IP address for a wired Ethernet connection
+- `ipconfig getifaddr en0`: return the IP address of your wireless connection
+- `curl ifconfig.me`: returns the public IP address of the Mac Terminal
+
+e.g.
+```
+10.0.0.2:8000
+```
+
 ## Conda
 
 ### List conda envs
