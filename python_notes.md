@@ -78,6 +78,28 @@ df.shape
 df.to_gbq('wx-bq-poc.personal.ar_test_team_benefits', project_id=project, chunksize=10000)
 ```
 
+### Read from BQ
+```
+import os
+from google.cloud import bigquery, storage
+
+project = 'gcp-wow-rwds-ai-mmm-super-dev'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS']=f"/home/jovyan/.config/gcloud/legacy_credentials/{os.getenv('JUPYTERHUB_USER')}/adc.json"
+os.environ['PROJECT']=project
+
+client_bq = bigquery.Client(project)
+
+# Contestable boosters
+sql = '''
+select *
+from `gcp-wow-rwds-ai-mmm-super-dev.PROD_MMM.CONTEST_BOOSTERS_20210305_refactor_dynamic`
+;
+'''
+df_bst = client_bq.query(sql).to_dataframe()
+df_bst.shape
+df_bst.head(2)
+```
+
 ### Global plot layout
 ```
 import matplotlib.pyplot as plt
