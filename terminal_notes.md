@@ -36,6 +36,18 @@ wc -l <file>
 
 - local IP address is from "wireless connection" when connected on wifi
 
+### [Listening on TCP port (MacOS)](https://stackoverflow.com/questions/4421633/who-is-listening-on-a-given-tcp-port-on-mac-os-x)
+```
+lsof -i -P | grep LISTEN | grep :$PORT
+
+# Just IP4
+lsof -i 4 -P | grep LISTEN | grep :$PORT
+```
+
+### To kill port ID (PID)
+```
+sudo kill -9 <PID>
+```
 
 
 ## MacOS: difference between `.zprofile` and `.zshrc`
