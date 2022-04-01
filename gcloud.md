@@ -25,6 +25,18 @@ gcloud config set compute/region us-central1
 gcloud config set compute/zone us-central1-a
 ```
 
+#### Show default region and zone
+```
+gcloud config get-value compute/region
+gcloud config get-value compute/zone
+```
+
+- View list of regions and zones
+```
+gcloud compute regions list
+gcloud compute zones list
+```
+
 
 ## Create VM from public image
 - https://cloud.google.com/compute/docs/instances/create-start-instance#gcloud
