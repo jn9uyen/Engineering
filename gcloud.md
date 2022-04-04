@@ -81,3 +81,18 @@ gcloud compute ssh jnguyen11_woolworths_com_au@jnguyen-dev-1 \
 --project gcp-wow-rwds-ai-mmm-dev \
 --ssh-flag="-L 8080:localhost:8080"
 ```
+
+## Debugging
+
+### `gcloud auth login`: authentication link doesn't show up
+
+Error message:
+```
+You are authorizing client libraries without access to a web browser. Please run the following command on a machine with a web browser and copy its output back here. Make sure the installed gcloud version is 372.0.0 or newer
+```
+
+[Solution](https://stackoverflow.com/questions/71561730/authorizing-client-libraries-without-access-to-a-web-browser-gcloud-auth-appli):
+```
+gcloud auth login --no-launch-browser
+```
+
