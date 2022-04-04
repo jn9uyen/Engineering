@@ -68,5 +68,12 @@ Notes from [apple.stackexchange](https://apple.stackexchange.com/questions/38862
 
 This is the order in which these files get read. Keep in mind that it (the shell?) reads first from the system-wide file (i.e. `/etc/zshenv`) then from the file in your home directory (`~/.zshenv`) as it goes through the following order.
 
+### `source .bashrc` in `.bash_profile`
 
+In linux env, if a `.bash_profile` is created, then `.bashrc` will not be sourced when logging into the machine (or VM). Add lines to the `.bash_profile` (which is read first before `.bashrc`):
+```
+# The following sources ~/.bashrc in the interactive login case,
+# because .bashrc isn't sourced for interactive login shells:
+case "$-" in *i*) if [ -r ~/.bashrc ]; then . ~/.bashrc; fi;; esac
+```
 
