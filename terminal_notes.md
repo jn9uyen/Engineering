@@ -52,7 +52,7 @@ sudo kill -9 <PID>
 
 ## MacOS: difference between `.zprofile` and `.zshrc`
 
-Notes from [apple.stackexchange](https://apple.stackexchange.com/questions/388622/zsh-zprofile-zshrc-zlogin-what-goes-where)
+Notes from [apple.stackexchange](https://apple.stackexchange.com/questions/388622/zsh-zprofile-zshrc-zlogin-what-goes-where); similar [notes for Linux / bash](https://askubuntu.com/questions/121073/why-bash-profile-is-not-getting-sourced-when-opening-a-terminal)
 
 - `.zprofile`: `.zlogin` and `.zprofile` are basically the same thing - they set the environment for login shells; they just get loaded at different times (see below). `.zprofile` is based on the Bash's `.bash_profile` while `.zlogin` is a derivative of CSH's `.login`. Since Bash was the default shell for everything up to Mojave, stick with `.zprofile`.
 
