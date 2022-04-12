@@ -44,6 +44,20 @@ lsof -i -P | grep LISTEN | grep :$PORT
 lsof -i 4 -P | grep LISTEN | grep :$PORT
 ```
 
+### List all processes, their status and resource usage
+```
+ps aux
+```
+- a = show processes for all users
+- u = display the process's user/owner
+- x = also show processes not attached to a terminal
+- `ps` = process status
+
+List processes on port
+```
+ps aux | grep node
+```
+
 ### To kill port ID (PID)
 ```
 sudo kill -9 <PID>
