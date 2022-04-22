@@ -41,6 +41,7 @@ gcloud compute zones list
 ## Create VM from public image
 - https://cloud.google.com/compute/docs/instances/create-start-instance#gcloud
 - https://bitbucket.org/wx_rds/decision-engine/src/master/docs/CONTRIBUTING.rst
+- https://gcpinstances.doit-intl.com/?selected=n2-highmem-4
 
 ```
 # Ensure current project is set to gcp-wow-rwds-ai-mmm-dev:
@@ -49,7 +50,7 @@ gcloud config set project gcp-wow-rwds-ai-mmm-dev
 gcloud compute instances create jnguyen-dev-1 \
 --project=gcp-wow-rwds-ai-mmm-dev \
 --zone=us-central1-a \
---machine-type=n2-standard-4 \
+--machine-type=n2-highmem-4 \
 --network=mmm-dev-vpc \
 --subnet=mmm-dev-usce1-subnet \
 --no-address \
