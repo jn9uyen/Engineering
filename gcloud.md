@@ -83,6 +83,56 @@ gcloud compute ssh jnguyen11_woolworths_com_au@jnguyen-dev-1 \
 --ssh-flag="-L 8080:localhost:8080"
 ```
 
+### [Show bigtable instances](https://cloud.google.com/bigtable/docs/deleting-instance)
+```
+gcloud bigtable instances list
+```
+Delete instance:
+- When you delete a Cloud Bigtable instance, you permanently delete the instance's clusters and all of the data in those clusters. Deleting an instance cannot be undone.
+```
+gcloud bigtable instances delete INSTANCE_ID
+```
+
+### Set up cbt (cloud big table) cli
+```
+gcloud components update
+gcloud components install cbt
+```
+
+### [Write data to bigtable](https://cloud.google.com/bigtable/docs/create-instance-write-data-cbt-cli?_ga=2.151194681.-1685935609.1606081332)
+
+In terminal:
+```
+echo project = gcp-wow-rwds-ai-dschapter-dev > ~/.cbtrc
+echo instance = jnguyen-real-time-ch >> ~/.cbtrc
+
+cbt createtable mytabe
+cbt ls  # list tables
+
+cbt createfamily mytable cf1  # add one column family cf1
+cbt ls mytable
+
+# Put the value test-value in the row r1, using the column family cf1 and the column qualifier c1
+cbt set mytable r1 cf1:c1=test-value
+cbt read mytable
+```
+> output
+```
+r1
+  cf1:c1                                   @ 2022/04/22-02:34:29.036000
+    "test-value"
+```
+
+#### Clean up
+
+To avoid incurring charges to your Google Cloud account for the resources used in this quickstart, delete the instance. Deleting the .cbtrc file leaves you ready to work on a different project.
+```
+cbt deletetable mytable
+cbt delete instance jnguyen-real-time-ch
+rm ~/.cbtrc
+```
+
+
 ## Debugging
 
 ### `gcloud auth login`: authentication link doesn't show up
@@ -96,4 +146,3 @@ You are authorizing client libraries without access to a web browser. Please run
 ```
 gcloud auth login --no-launch-browser
 ```
-
