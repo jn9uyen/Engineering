@@ -10,3 +10,13 @@ Update the linux terminal setting.json to the below (This can be found in ~/.loc
     "terminal.integrated.shellArgs.linux": [ "-l" ]
 }
 ```
+
+### Run code-server specifying port
+```
+code-server --auth none --port 8082
+```
+
+or set alias in `~/.bash_aliases`
+```
+alias vscode='code-server --auth none --port 8082'
+```
