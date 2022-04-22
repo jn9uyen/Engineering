@@ -91,3 +91,7 @@ In linux env, if a `.bash_profile` is created, then `.bashrc` will not be source
 case "$-" in *i*) if [ -r ~/.bashrc ]; then . ~/.bashrc; fi;; esac
 ```
 
+#### Note:
+
+- `rc`: stands for run commands/control
+
