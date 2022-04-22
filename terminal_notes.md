@@ -63,6 +63,11 @@ ps aux | grep node
 sudo kill -9 <PID>
 ```
 
+### Restart shell
+```
+exec "$SHELL"
+```
+
 
 ## MacOS: difference between `.zprofile` and `.zshrc`
 
