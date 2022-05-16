@@ -146,3 +146,11 @@ You are authorizing client libraries without access to a web browser. Please run
 ```
 gcloud auth login --no-launch-browser
 ```
+
+## `gsutil`
+
+### List files in directory with start and end names
+Save output in .txt:
+```
+gsutil ls gs://wx-57a8a73b-9e03-4f1d-9349-bf67bf6d9c2c/mmm_super_model_repo/**/model_object.pickle > tmp/data/mmm_super_model_repo__pickles.txt
+```
