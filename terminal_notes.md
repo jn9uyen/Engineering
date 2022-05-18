@@ -68,6 +68,13 @@ sudo kill -9 <PID>
 exec "$SHELL"
 ```
 
+### Set and unset env variables
+```
+export VAR=test_string
+echo $VAR
+unset VAR
+echo $VAR
+```
 
 ## MacOS: difference between `.zprofile` and `.zshrc`
 
