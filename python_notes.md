@@ -168,3 +168,11 @@ python -m ipykernel install --user --name test_env
 ```
 conda env remove -n <env_name>
 ```
+
+# Pip notes
+
+### Check package version (in terminal)
+```
+pip show <package>
+pip show rankstrategy
+```
