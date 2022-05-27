@@ -132,6 +132,13 @@ cbt delete instance jnguyen-real-time-ch
 rm ~/.cbtrc
 ```
 
+### [CBT commands](https://cloud.google.com/bigtable/docs/cbt-reference)
+
+```
+cbt count <table>   # count rows
+cbt read <table>    # read all rows
+```
+
 
 ## Debugging
 
