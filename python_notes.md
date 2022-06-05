@@ -137,6 +137,15 @@ e.g.
 10.0.0.2:8000
 ```
 
+### Print `PYTHONPATH`
+```
+import os
+import sys
+
+print(sys.path)
+print(os.environ.get('PYTHONPATH', '').split(os.pathsep))
+```
+
 ## Conda
 
 ### List conda envs
