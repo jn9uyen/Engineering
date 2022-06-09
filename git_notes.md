@@ -6,6 +6,12 @@ git config --global user.name "jnguyen-dev-1"
 git config --global user.email "jnguyen11@woolworths.com.au"
 ```
 
+## Store credentials on local machine
+```
+git config --global credential.helper store
+```
+**Warning**: If you use this method, your Git account passwords will be saved in plaintext format, in the global .gitconfig file, e.g in Linux it will be /home/[username]/.gitconfig. If this is undesirable to you, use an ssh key for your accounts instead. [link](https://stackoverflow.com/questions/35942754/how-can-i-save-username-and-password-in-git)
+
 
 ## [Create local repo and add remote](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
 1. Initialise local repo
