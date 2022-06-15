@@ -172,6 +172,11 @@ conda create -n test_env python=3.6.5
 source activate <env_name>
 ```
 
+### Install from requirements.txt
+```
+pip install -r requirements.txt
+```
+
 ### Create env and ensure it's available in Jupyter notebook as a kernel
 
 In terminal:
