@@ -160,6 +160,18 @@ conda create --name <env_name> --clone <clone_env_name>
 conda create --name <env_name> --clone base
 ```
 
+### Create env with python version
+```
+conda create -n <env_name> python=<version>
+# e.g.
+conda create -n test_env python=3.6.5
+```
+
+### Activate env
+```
+source activate <env_name>
+```
+
 ### Create env and ensure it's available in Jupyter notebook as a kernel
 
 In terminal:
