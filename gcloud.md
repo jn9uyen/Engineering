@@ -37,6 +37,11 @@ gcloud compute regions list
 gcloud compute zones list
 ```
 
+### Create GCS bucket
+```
+BUCKET_NAME=gs://$GOOGLE_CLOUD_PROJECT-bucket
+gsutil mb -l us-central1 $BUCKET_NAME
+```
 
 ## Create VM from public image
 - https://cloud.google.com/compute/docs/instances/create-start-instance#gcloud
