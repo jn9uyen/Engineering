@@ -33,8 +33,44 @@ PATH=/Users/joe/.pyenv/shims:${PATH}
 ```
 after the conda initialisation in `~/.zshrc`.
 
+### [Ubuntu](https://www.liquidweb.com/kb/how-to-install-pyenv-on-ubuntu-18-04/)
 
-### Commands
+### 1. Update and install dependencies
+```
+apt update -y
+
+apt install -y make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl \
+git
+```
+
+### 2. Clone repo
+```
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+```
+
+### 3. Configure the Environment
+```
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"\nfi' >> ~/.bashrc
+```
+
+#### Restart shell
+```
+exec "$SHELL"
+```
+
+### 4. Verify installation
+```
+pyenv install --list
+pyenv install 3.8.13
+pyenv versions
+```
+
+
+## Commands
 
 - List available Python versions
 ```
