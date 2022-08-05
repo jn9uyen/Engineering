@@ -88,6 +88,17 @@ gcloud compute ssh jnguyen11_woolworths_com_au@jnguyen-dev-1 \
 --ssh-flag="-L 8080:localhost:8080"
 ```
 
+### Notes on port-forwarding
+
+Format: `VM port:VM IP address:vscode port` e.g. `8081:localhost:8082`
+
+- access in browser via `localhost:<VM port>` where `localhost` is the browser machine localhost, not the VM localhost
+- For vscode, default port is 8080; can change via cmd:
+```
+code-server --auth none --port <ID>; i.e.
+code-server --auth none --port 8082
+```
+  
 ### [Show bigtable instances](https://cloud.google.com/bigtable/docs/deleting-instance)
 ```
 gcloud bigtable instances list
