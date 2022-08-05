@@ -135,8 +135,24 @@ python
 -> `.pyenv/shims` takes care of everything
 
 
-## pyenv-virtualenvwrapper
+## [pyenv-virtualenvwrapper](https://github.com/pyenv/pyenv-virtualenvwrapper)
 
+### Linux
+```
+git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plugins/pyenv-virtualenvwrapper
+```
+```
+echo 'export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"' >> ~/.bashrc
+echo 'export WORKON_HOME=$HOME/.virtualenvs' >> ~/.bashrc
+echo 'pyenv virtualenvwrapper_lazy' >> ~/.bashrc
+```
+
+Restart shell
+```
+exec "$SHELL"
+```
+
+### Mac
 ```
 brew install pyenv-virtualenvwrapper
 ```
