@@ -76,6 +76,11 @@ unset VAR
 echo $VAR
 ```
 
+### [List files ordered by file size](https://unix.stackexchange.com/questions/53737/how-to-list-all-files-ordered-by-size)
+```
+find . -type f -ls | sort -r -n -k7
+```
+
 ## MacOS: difference between `.zprofile` and `.zshrc`
 
 Notes from [apple.stackexchange](https://apple.stackexchange.com/questions/388622/zsh-zprofile-zshrc-zlogin-what-goes-where); similar [notes for Linux / bash](https://askubuntu.com/questions/121073/why-bash-profile-is-not-getting-sourced-when-opening-a-terminal)
