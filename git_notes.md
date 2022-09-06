@@ -114,6 +114,12 @@ git pull --rebase <remote> (e.g. origin develop)
 git checkout -b <new_branch> <other branch>
 ```
 
+### Create orphan branch
+```
+git checkout --orphan <new_branch>
+```
+The core use for `git checkout --orphan` is to create a branch in a `git init`-like state on a non-new repository. A situation is where you want to keep the files from a certain branch and truncate the history of your repository.
+
 
 ## [Delete branch](https://www.educative.io/edpresso/how-to-delete-remote-branches-in-git)
 ```
