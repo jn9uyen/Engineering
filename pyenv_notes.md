@@ -182,6 +182,12 @@ ls $WORKON_HOME
 echo $VIRTUAL_ENV
 ```
 
+### List `python` packages
+```
+pip list --local # OR
+pip freeze --local
+```
+
 ## Difference between all of these tools (e.g. `pyenv`, `virtualenv`)
 
 Answer from [stack overflow](https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe)
