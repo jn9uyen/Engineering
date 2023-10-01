@@ -9,6 +9,7 @@
 
 ### View lines of file
 ```
+cat <file>
 less <file>
 more <file>
 
