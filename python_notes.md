@@ -146,6 +146,28 @@ print(sys.path)
 print(os.environ.get('PYTHONPATH', '').split(os.pathsep))
 ```
 
+### Append to pandas df with loop
+```
+def _get_lbub(self, ub):
+    result = dict()
+    category_ublb = []
+    if ub:
+        for k1, v1 in ub.items():
+            if isinstance(v1, dict):
+                for k2, v2 in v1.items():
+                    result[k2] = v2
+                    category_ublb.append([k1, k2])
+            else:
+                result[k1] = v1
+    category_ublb = pd.DataFrame(
+        category_ublb, columns=self._category_ublb.columns
+    )
+    self._category_ublb = pd.concat(
+        [self._category_ublb, category_ublb], ignore_index=True
+    ).drop_duplicates()
+    return Moose.to_pdseries(result)
+```
+
 ## Conda
 
 ### List conda envs
