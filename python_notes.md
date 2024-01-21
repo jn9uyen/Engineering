@@ -21,7 +21,8 @@ pd.set_option('display.max_columns', None)
 ```
 import sys
 import importlib
-importlib.reload(sys.modules['qb5001_utils'])
+importlib.reload(sys.modules['analytics_engine'])
+from analytics_engine import AnalyticsEngine    # need to re-import
 ```
 
 ### Read all files from GCS
