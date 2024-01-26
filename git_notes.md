@@ -91,6 +91,11 @@ git branch -r  # remote branches
 git branch -a  # all
 ```
 
+### Remove remotely-deleted branches that appear in local `git branch -a`
+```
+git remote prune origin
+```
+
 ## Change branch
 ```
 git checkout <existing_branch>
