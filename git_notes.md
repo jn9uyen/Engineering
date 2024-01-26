@@ -49,13 +49,11 @@ git push -u <remote_name> <local_branch_name>
 git push -u origin master
 ```
 
-
 ## Better Solution to above (clone from remote):
 ```
 git clone https://github.com/roparzhhemon/myremoterepo.git
 ```
 then add files, commit, push
-
 
 ## [Steps to create a new local branch](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches)
 1. Before creating a new branch, pull the changes from upstream. Your master needs to be up to date.
@@ -79,7 +77,6 @@ https://www.freecodecamp.org/forum/t/push-a-new-local-branch-to-a-remote-git-rep
 git push -u origin <branch>
 ```
 
-
 ## Rebase options
 ```
 git rebase --edit
@@ -87,27 +84,23 @@ git rebase --skip
 git rebase --abort
 ```
 
-
-## See branches
+## View branches
 ```
 git branch     # local branches
 git branch -r  # remote branches
 git branch -a  # all
 ```
 
-
 ## Change branch
 ```
 git checkout <existing_branch>
 ```
-
 
 ## Create branch
 ```
 git checkout -b <new_branch>
 git pull --rebase <remote> (e.g. origin develop)
 ```
-
 
 ## Create branch from another branch (e.g. develop)
 ```
@@ -120,7 +113,6 @@ git checkout --orphan <new_branch>
 ```
 The core use for `git checkout --orphan` is to create a branch in a `git init`-like state on a non-new repository. A situation is where you want to keep the files from a certain branch and truncate the history of your repository.
 
-
 ## [Delete branch](https://www.educative.io/edpresso/how-to-delete-remote-branches-in-git)
 ```
 git branch -d <branch>
@@ -128,12 +120,15 @@ git branch -D <branch> # force delete
 git push origin --delete <branch> # delete on repo
 ```
 
+## View commits
+```
+git log --oneline
+```
 
 ## Rollback to particular commit
 ```
 git reset --hard <tag/branch/commit id>
 ```
-
 
 ## Unstage local commits (n == number of commits)
 ```
@@ -142,13 +137,11 @@ git reset --soft HEAD~n
 git reset --soft HEAD~2
 ```
 
-
 ## Add changes to previous commit: rollback and amend
 ```
 git reset HEAD~ 
 git commit --amend
 ```
-
 
 ## Force push
 ```
@@ -160,7 +153,6 @@ git reset --hard <sha1-commit-id>
 ```
 git reset --hard <sha1-commit-id>
 ```
-
 
 ## Stash (-m for message)
 ```
@@ -195,13 +187,11 @@ git stash drop 1
 ```
 where n is the number shown from `git stash list`
 
-
 ## Remove untracked from local
 ### 1. Display files to remove
 ```
 git clean -n
 ```
-
 ### 2. Remove files
 ```
 git clean -f
