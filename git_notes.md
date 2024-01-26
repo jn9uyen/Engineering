@@ -96,7 +96,7 @@ git branch -a  # all
 git remote prune origin
 ```
 
-## Change branch
+## Change / swtich branch
 ```
 git checkout <existing_branch>
 ```
