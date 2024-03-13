@@ -119,6 +119,15 @@ sns.set_style('darkgrid', rc={'legend.frameon': True})
 plt.rcParams['figure.figsize'] = (9, 5)
 ```
 
+#### Auto Layout
+```
+import matplotlib.pyplot as plt
+from matplotlib import rcParams
+import seaborn as sns
+
+rcParams.update({"figure.autolayout": True})
+```
+
 ### Run `http.server` function (from cmd line)
 ```
 python -m http.server
