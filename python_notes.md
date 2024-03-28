@@ -105,17 +105,18 @@ df_bst.head(2)
 ```
 import matplotlib.pyplot as plt
 import seaborn as sns
+import seaborn.objects as so
 
-plt.style.use('ggplot')
-sns.set_context('notebook', font_scale=1.2, rc={
-    'axes.titlesize': 20,
-    'axes.labelsize': 18,
-    'axes.ticksize': 18,
-    'axes.textsize': 18,
-    'font.size': 12,
-    'legend.fontsize': 14
+plt.style.use('seaborn-v0_8-whitegrid')
+sns.set_context('notebook', font_scale=1.0, rc={
+    'axes.titlesize': 18,
+    'axes.labelsize': 13,
+    'axes.ticksize': 13,
+    'axes.textsize': 13,
+    'font.size': 11,
+    'legend.fontsize': 13
 })
-sns.set_style('darkgrid', rc={'legend.frameon': True})
+# sns.set_style('darkgrid', rc={'legend.frameon': True})
 plt.rcParams['figure.figsize'] = (9, 5)
 ```
 
