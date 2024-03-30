@@ -157,27 +157,31 @@ print(sys.path)
 print(os.environ.get('PYTHONPATH', '').split(os.pathsep))
 ```
 
-### Append to pandas df with loop
+### Create pandas df using loop
 ```
-def _get_lbub(self, ub):
-    result = dict()
-    category_ublb = []
-    if ub:
-        for k1, v1 in ub.items():
-            if isinstance(v1, dict):
-                for k2, v2 in v1.items():
-                    result[k2] = v2
-                    category_ublb.append([k1, k2])
-            else:
-                result[k1] = v1
-    category_ublb = pd.DataFrame(
-        category_ublb, columns=self._category_ublb.columns
+# Apply stats test: t-test, Mann-Whitney U, PSI
+default_grp = pdf.groupby("has_defaulted_flag")
+
+res = []
+for col in score_cols:
+    default = default_grp.get_group("y")[col]
+    non_default = default_grp.get_group("n")[col]
+    t_pval = stats.ttest_ind(default, non_default, equal_var=False)[1]
+    mwu_pval = stats.mannwhitneyu(default, non_default)[1]
+    psi = calc_psi(default, non_default)
+    # psi = None
+    res.append(
+        {
+            "metric": col,
+            "t_pval": t_pval,
+            "mwu_pval": mwu_pval,
+            "psi": psi,
+        }
     )
-    self._category_ublb = pd.concat(
-        [self._category_ublb, category_ublb], ignore_index=True
-    ).drop_duplicates()
-    return Moose.to_pdseries(result)
+res = pd.DataFrame(res)
+res
 ```
+Note, do NOT use `pd.concat` on a list of lists because it is inefficient.
 
 ## Conda
 
