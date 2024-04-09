@@ -167,9 +167,18 @@ brew install pyenv-virtualenvwrapper
 
 ### Append to `.zshrc`
 ```
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-export WORKON_HOME=$HOME/.virtualenvs
-pyenv virtualenvwrapper_lazy
+echo 'export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"' >> ~/.zshrc
+echo 'export WORKON_HOME=$HOME/.virtualenvs' >> ~/.zshrc
+echo 'pyenv virtualenvwrapper_lazy' >> ~/.zshrc
+
+source ~/.zshrc
+```
+
+- If getting **error** `Could not fetch URL https://pypi.org/simple/virtualenvwrapper/: There was a problem confirming the ssl certificate:` from `pyenv virtualenvwrapper_lazy` try:
+```
+brew install openssl
+echo 'export PATH=$(brew --prefix openssl)/bin:$PATH' >> ~/.zprofile
+source ~/.zprofile
 ```
 
 ### Create virtual env
