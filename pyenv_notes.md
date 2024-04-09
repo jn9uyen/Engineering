@@ -205,6 +205,13 @@ pip list --local # OR
 pip freeze --local
 ```
 
+## VS Code: Select Interpreter
+Add the following line to `settings.json` and then refresh "Select Interpreter" (circular refresh icon on right) from preferences:
+```
+"python.defaultInterpreterPath": "${env:VIRTUAL_ENV}",
+```
+
+
 ## Difference between all of these tools (e.g. `pyenv`, `virtualenv`)
 
 Answer from [stack overflow](https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe)
