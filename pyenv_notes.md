@@ -113,6 +113,14 @@ pyenv install xxx
 pyenv local xxx  # activate python version inside your project directory
 ```
 
+- If warning:
+```
+ModuleNotFoundError: No module named '_lzma'
+WARNING: The Python lzma extension was not compiled. Missing the lzma lib?
+```
+then [solution](https://stackoverflow.com/questions/57743230/userwarning-could-not-import-the-lzma-module-your-installed-python-is-incomple) is `brew install xz` and then re-install env.
+
+
 - If needed, modify `.zshrc` file so that `.pyenv shims` is at the start of the `$PATH`
 `PATH=/Users/joe/.pyenv/shims:${PATH}`
 `source .zshrc`
