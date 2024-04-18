@@ -1,5 +1,12 @@
 # Terminal Notes (Linux / Unix)
 
+## Nice rendering
+Install "oh my zsh" from [ohmyzsh github](https://github.com/ohmyzsh/ohmyzsh). Also install [homebrew fonts](https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file#option-2-homebrew-fonts)
+```
+brew tap homebrew/cask-fonts
+brew install font-hack-nerd-font
+```
+
 ## Commands
 
 ### Remove all files (on machine)
