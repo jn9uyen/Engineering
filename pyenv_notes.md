@@ -19,6 +19,7 @@ brew install pyenv
 echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 
+# Reload files
 source ~/.zprofile
 source ~/.zshrc
 
