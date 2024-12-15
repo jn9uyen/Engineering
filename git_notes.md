@@ -91,11 +91,6 @@ git branch -r  # remote branches
 git branch -a  # all
 ```
 
-### Remove remotely-deleted branches that appear in local `git branch -a`
-```
-git remote prune origin
-```
-
 ## Change / swtich branch
 ```
 git checkout <existing_branch>
@@ -123,6 +118,11 @@ The core use for `git checkout --orphan` is to create a branch in a `git init`-l
 git branch -d <branch>
 git branch -D <branch> # force delete
 git push origin --delete <branch> # delete on repo
+```
+
+### Remove remotely-deleted branches that appear in local `git branch -a`
+```
+git remote prune origin
 ```
 
 ## View commits
