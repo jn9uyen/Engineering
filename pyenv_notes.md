@@ -200,6 +200,13 @@ ls $WORKON_HOME
 echo $VIRTUAL_ENV
 ```
 
+### Remove env
+- List all envs `lsvirtualenv`
+- Remove an env:
+```
+rmvirtualenv <env_name>
+```
+
 ### List `python` packages
 ```
 pip list --local # OR
